@@ -18,7 +18,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": false,
-        "rgb_matrix": true,
+        "rgb_matrix": false,
         "digitizer": true,
         "pointing_device": true
     },
