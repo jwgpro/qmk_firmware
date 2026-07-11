@@ -27,7 +27,12 @@
 #    define MXT_Y_PITCH 38
 #    define MXT_ACTIVE_ACQUISITION_INTERVAL 255 // Free run while active - this enables us to reach a polling rate of around 300Hz
 #    define MXT_CONFTHR 5 // Increase debounce time
-#    define MXT_MOVE_HYSTERESIS_NEXT 16
+#    ifndef MXT_MOVE_HYSTERESIS_NEXT // https://github.com/piontec/qmk_firmware/commit/7b5baef941f07e3d67d28342c10dfc29c77e9ecf
+#        define MXT_MOVE_HYSTERESIS_NEXT 16
+#    endif
+#    ifndef MXT_MOVE_HYSTERESIS_INITIAL
+#        define MXT_MOVE_HYSTERESIS_INITIAL 10
+#    endif
 #endif
 
 // Board specific configuration

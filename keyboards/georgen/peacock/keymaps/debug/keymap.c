@@ -9,8 +9,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT(QK_MO
                                                               [2] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
                                                               [3] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)};
 #else
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT(KC_MUTE, QK_MOUSE_BUTTON_1, QK_MOUSE_BUTTON_2, LT(1, QK_MOUSE_BUTTON_3), KC_LGUI, KC_ENTER, C(KC_C)),
-                                                              [1] = LAYOUT(KC_TRNS, QK_BOOT, QK_RGB_MATRIX_MODE_NEXT, KC_TRNS, QK_RGB_MATRIX_MODE_PREVIOUS, EE_CLR, KC_TRNS),
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, QK_MOUSE_BUTTON_1, QK_MOUSE_BUTTON_3, QK_MOUSE_BUTTON_2, C(KC_C)),
+                                                              [1] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
                                                               [2] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
                                                               [3] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)};
 #endif
@@ -38,13 +38,13 @@ bool shutdown_kb(bool jump_to_bootloader) {
     if (!shutdown_user(jump_to_bootloader)) {
         return false;
     }
-    void rgb_matrix_update_pwm_buffers(void);
-    if (jump_to_bootloader) {
-        rgb_matrix_set_color_all(RGB_RED);
-    }
-    else {
-        rgb_matrix_set_color_all(RGB_OFF);
-    }
-    rgb_matrix_update_pwm_buffers();
+    // void rgb_matrix_update_pwm_buffers(void);
+    // if (jump_to_bootloader) {
+    //     rgb_matrix_set_color_all(RGB_RED);
+    // }
+    // else {
+    //     rgb_matrix_set_color_all(RGB_OFF);
+    // }
+    // rgb_matrix_update_pwm_buffers();
     return true;
 }
